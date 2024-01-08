@@ -1,8 +1,14 @@
-import React from 'react'
+import React from 'react';
+import Input from './Input/Input';
+import Show from './Display/Show';
+
 
 function Main() {
   return (
-    <div>Main</div>
+    <div>
+      <Input />
+      <Show />
+    </div>
   )
 }
 

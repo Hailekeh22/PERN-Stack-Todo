@@ -3,7 +3,10 @@ import './header.css'
 
 function Header() {
   return (
-    <div>Header</div>
+    <div className='container'>
+      <h2>Todo List</h2>
+       
+    </div>
   )
 }
 
