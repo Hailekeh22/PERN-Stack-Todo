@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:wght@600&family=Lemon&display=swap');
 .container{
     width: auto;
     height: 5rem;
@@ -9,6 +10,7 @@
 
 .container h2 {
     background: none;
-    font-family: 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lemon', serif;
+    font-weight: 300;
     font-size: 2rem;
 }
