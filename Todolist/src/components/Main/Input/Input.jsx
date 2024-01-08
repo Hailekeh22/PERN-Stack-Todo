@@ -1,13 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Input.css'
 
-
 function Input() {
+
+  const [value, setvalue] = useState("");
+  const [input, setinput] = useState("");
+
+
+  function handlechange(e) {
+    const txt = e.target.value;
+    setinput(txt);
+
+  }
+
+  function handleclick() {
+
+  }
+
+
+
   return (
     <div className='inputbox'>
-        <textarea className='inputarea' placeholder='Type here..'></textarea>
-        <button className='submitbtn'>Add</button>
-      
+      <textarea onChange={handlechange} value={input} className='inputarea' placeholder='Type here..'></textarea>
+      <button onClick={handleclick} className='submitbtn'>Add</button>
+
     </div>
   )
 }
