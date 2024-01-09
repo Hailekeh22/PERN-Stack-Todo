@@ -19,6 +19,7 @@
     margin-top: .5rem;
     background: none;
     width: 100%;
+    font-weight: bolder;
     border-radius: 5px;
     height: 2rem;
     border: 1px solid black;
@@ -27,5 +28,5 @@
 .submitbtn:hover{
     background-color: aqua;
     transition: .2s ease-in;
-    font-weight: bold;
+    
 }
