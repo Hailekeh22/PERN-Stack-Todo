@@ -3,12 +3,13 @@ import './Show.css'
 import Card from './Card'
 
 function Show() {
+
+  const todoitems = [];
+
   return (
     <div>
       <div className='card-container'>
-        <Card />
-        <Card />
-        <Card />
+       
       </div>
     </div>
   )
