@@ -3,7 +3,7 @@ import './Input.css'
 
 function Input() {
 
-  const [value, setvalue] = useState("");
+  const [value, setvalue] = useState([]);
   const [input, setinput] = useState("");
 
 
@@ -14,10 +14,16 @@ function Input() {
   }
 
   function handleclick() {
-
+    setvalue((prev) => {
+      return  [...prev,input]
+    })
+    setinput("");
+    
   }
 
-
+function Valuearr() {
+  return value;
+}
 
   return (
     <div className='inputbox'>
@@ -28,4 +34,8 @@ function Input() {
   )
 }
 
-export default Input
+
+
+export default Input ;
+
+

@@ -1,10 +1,10 @@
 import React from 'react'
 import './Show.css'
 
-function Card() {
+function Card(props) {
   return (
     <div className='card'>
-        <p>Helo</p>
+        <p>{props.content}</p>
         <button className='deletebtn'>Delete</button>
     </div>
   )

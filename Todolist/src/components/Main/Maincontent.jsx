@@ -3,7 +3,7 @@ import Input from './Input/Input';
 import Show from './Display/Show';
 
 
-function Main() {
+function Maincontent() {
   return (
     <div>
       <Input />
@@ -12,4 +12,4 @@ function Main() {
   )
 }
 
-export default Main
+export default Maincontent
