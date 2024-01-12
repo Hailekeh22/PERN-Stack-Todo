@@ -1,0 +1,24 @@
+.mainbody{
+    padding: 1rem 30%;
+}
+
+@media (max-width: 1030px) {
+    .mainbody{
+        padding: 1rem 25%;
+    }
+}
+@media (max-width: 900px) {
+    .mainbody{
+        padding: 1rem 20%;
+    }
+}
+@media (max-width: 647px) {
+    .mainbody{
+        padding: 1rem 15%;
+    }
+}
+@media (max-width: 470px) {
+    .mainbody{
+        padding: 1rem 5%;
+    }
+}
