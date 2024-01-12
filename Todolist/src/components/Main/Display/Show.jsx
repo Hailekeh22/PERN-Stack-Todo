@@ -3,7 +3,7 @@ import './Show.css'
 import Card from './Card'
 
 
-function Show() {
+function Show(props) {
 
   
 

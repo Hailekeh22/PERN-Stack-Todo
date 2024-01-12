@@ -16,19 +16,25 @@ function Input() {
   function handleclick() {
     setvalue((prev) => {
       return  [...prev,input]
-    })
+    });
+    
     setinput("");
     
   }
 
-function Valuearr() {
-  return value;
-}
+
 
   return (
     <div className='inputbox'>
-      <textarea onChange={handlechange} value={input} className='inputarea' placeholder='Type here..'></textarea>
-      <button onClick={handleclick} className='submitbtn'>Add</button>
+      <textarea 
+      onChange={handlechange} 
+      value={input} 
+      className='inputarea' 
+      placeholder='Type here..'></textarea>
+
+      <button 
+      onClick={handleclick} 
+      className='submitbtn'>Add</button>
 
     </div>
   )
