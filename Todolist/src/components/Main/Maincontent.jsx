@@ -6,14 +6,18 @@ import './main.css'
 
 function Maincontent() {
 
-  const [values, setValues] = useState([]);
+  const [value, setValue] = useState([]);
+
+  function addValue(input) {
+    setValue((prev) => [...prev, input]);
+  };
 
   
 
   return (
     <div className='mainbody'>
-      <Input />
-      <Show />
+      <Input addValue={addValue}/>
+      <Show value={value}/>
     </div>
   )
 }

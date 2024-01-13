@@ -4,7 +4,7 @@ import './Show.css'
 function Card(props) {
   return (
     <div className='card'>
-        <p>{props.content}</p>
+        <p>{props.value}</p>
         <button className='deletebtn'>Delete</button>
     </div>
   )

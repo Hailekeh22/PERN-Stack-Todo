@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import './Input.css'
 
-function Input() {
+function Input({ addValue }) {
 
-  const [value, setvalue] = useState([]);
+  
   const [input, setinput] = useState("");
 
 
@@ -14,10 +14,7 @@ function Input() {
   }
 
   function handleclick() {
-    setvalue((prev) => {
-      return  [...prev,input]
-    });
-    
+    addValue(input);
     setinput("");
     
   }
