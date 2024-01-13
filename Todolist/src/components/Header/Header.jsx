@@ -6,6 +6,7 @@ function Header() {
     <div className='container'>
       <h2>Todo List</h2>
        
+       <div className='fade-bottom'></div>
     </div>
   )
 }

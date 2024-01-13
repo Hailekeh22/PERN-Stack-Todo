@@ -25,10 +25,13 @@
     height: 2rem;
     border: 1px solid black;
     outline: 0;
+    transition: all 0.4s ease 0s;
 }
 .submitbtn:hover{
-    background-color: aqua;
-    transition: .2s ease-in;
+    color: #ffffff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
     
 }
 
