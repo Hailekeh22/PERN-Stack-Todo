@@ -22,4 +22,8 @@
     .mainbody{
         padding: 1rem 5%;
     }
+    .card p {
+    font-size: 1rem;
+   
+}
 }
