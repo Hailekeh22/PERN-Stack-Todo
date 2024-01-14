@@ -3,15 +3,15 @@ import './Show.css'
 import Card from './Card'
 
 
-function Show({value}) {
+function Show(props) {
 
-  
+
 
   return (
     <div>
       <div className='card-container'>
-        {value.map((item,index) => {
-          return <Card key={index} value={item} />
+        {props.value.map((item,index) => {
+          return <Card key={index} onDelete={props.onDelete} value={item} />
         })}
       </div>
     </div>

@@ -12,12 +12,17 @@ function Maincontent() {
     setValue((prev) => [...prev, input]);
   };
 
+  function deletelist(removedvalue) {
+    let newvalue = value.filter((val) => val !== removedvalue);
+    setValue(newvalue);
+    //console.log("Delete Button Clicked!");
+  }
   
 
   return (
     <div className='mainbody'>
       <Input addValue={addValue}/>
-      <Show value={value}/>
+      <Show value={value} onDelete={deletelist}/>
     </div>
   )
 }

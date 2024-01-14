@@ -2,10 +2,13 @@ import React from 'react'
 import './Show.css'
 
 function Card(props) {
+
+  let value = props.value
+
   return (
     <div className='card'>
-        <p>{props.value}</p>
-        <button className='deletebtn'>Delete</button>
+      <p>{value}</p>
+      <button className='deletebtn' onClick={() => props.onDelete(value)}>Delete</button>
     </div>
   )
 }

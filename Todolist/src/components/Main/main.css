@@ -1,5 +1,6 @@
 .mainbody{
     padding: 1rem 30%;
+    height: auto;
 }
 
 @media (max-width: 1030px) {

@@ -1,0 +1,9 @@
+.footer{
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    color: white;
+    font-family: sans-serif;
+    font-style: italic;
+}
+
