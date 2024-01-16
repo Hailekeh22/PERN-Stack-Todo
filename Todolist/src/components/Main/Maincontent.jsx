@@ -9,7 +9,11 @@ function Maincontent() {
   const [value, setValue] = useState([]);
 
   function addValue(input) {
+    if(input !== "") {
     setValue((prev) => [...prev, input]);
+    } else {
+      alert("Invalid Submit!!")
+    }
   };
 
   function deletelist(removedvalue) {
