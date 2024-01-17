@@ -18,7 +18,8 @@ function Maincontent(props) {
   }
 
   function addValue(input) {
-    if(input !== "") {
+    
+    if(input !== "" && !value.includes(input)) {
     setValue((prev) => [...prev, input]);
     } else {
       alert("Invalid Submit!!")
