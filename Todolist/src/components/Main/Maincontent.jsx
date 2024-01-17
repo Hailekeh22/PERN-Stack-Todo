@@ -4,9 +4,18 @@ import Show from './Display/Show';
 import './main.css'
 
 
-function Maincontent() {
+function Maincontent(props) {
 
   const [value, setValue] = useState([]);
+  const [editValue,setEditValue] = useState("");
+
+
+
+  function editvalue(val) {
+    setEditValue(val);
+    console.log(editValue + " from main")
+
+  }
 
   function addValue(input) {
     if(input !== "") {
@@ -19,14 +28,15 @@ function Maincontent() {
   function deletelist(removedvalue) {
     let newvalue = value.filter((val) => val !== removedvalue);
     setValue(newvalue);
-    //console.log("Delete Button Clicked!");
   }
-  
 
+
+ 
+  
   return (
     <div className='mainbody'>
-      <Input addValue={addValue}/>
-      <Show value={value} onDelete={deletelist}/>
+      <Input addValue={addValue} editValue={editValue}/>
+      <Show value={value} editvalue={editvalue} onDelete={deletelist}/>
     </div>
   )
 }

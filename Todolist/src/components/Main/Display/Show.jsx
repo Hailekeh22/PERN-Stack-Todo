@@ -11,7 +11,7 @@ function Show(props) {
     <div>
       <div className='card-container'>
         {props.value.map((item,index) => {
-          return <Card key={index} onDelete={props.onDelete} value={item} />
+          return <Card key={index} editvalue={props.editvalue} onDelete={props.onDelete} value={item} />
         })}
       </div>
     </div>

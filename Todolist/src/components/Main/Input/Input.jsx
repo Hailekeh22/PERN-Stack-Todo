@@ -1,10 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Input.css'
 
-function Input({ addValue }) {
+function Input(props) {
 
   
   const [input, setinput] = useState("");
+
+
+
+  useEffect(() => {
+    setinput(props.editValue);
+  }, [props.editValue]);
 
 
   function handlechange(e) {
@@ -13,8 +19,10 @@ function Input({ addValue }) {
 
   }
 
+
+
   function handleclick() {
-    addValue(input);
+    props.addValue(input);
     setinput("");
     
   }

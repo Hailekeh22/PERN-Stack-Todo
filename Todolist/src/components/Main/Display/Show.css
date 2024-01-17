@@ -13,6 +13,7 @@
     margin: 1rem 0;
     color: white;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     box-shadow: 0 6px 10px #00000090;
     
@@ -25,16 +26,21 @@
     font-family: sans-serif;
 }
 
-.deletebtn{
-    margin-left: .5rem;
-    padding: .5rem 1rem;
-    border: 1px solid black;
+.deleteicon{
     background: none;
-    outline: none;
-    transition:.2s ease-out ;
+    cursor: pointer;
+    margin-left: .4rem;
 }
 
-.deletebtn:hover{
-    color: white;
-    border: 1px solid white;
+.right-card{
+    display: flex;
+    background: none;
+    font-size: 1.2rem;
+    
+}
+
+
+.editicon{
+    background: none;
+    cursor: pointer;
 }

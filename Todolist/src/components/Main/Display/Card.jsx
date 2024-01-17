@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import { FaRegTrashCan } from 'react-icons/fa6';
+import { FaPenToSquare } from "react-icons/fa6";
 import './Show.css'
 
 function Card(props) {
@@ -8,7 +10,10 @@ function Card(props) {
   return (
     <div className='card'>
       <p>{value}</p>
-      <button className='deletebtn' onClick={() => props.onDelete(value)}>Delete</button>
+      <div className='right-card'>
+        <a onClick={() => props.editvalue(value)}><FaPenToSquare className='editicon' /></a>
+        <a onClick={() => props.onDelete(value)}><FaRegTrashCan className='deleteicon'/></a>
+      </div>
     </div>
   )
 }
