@@ -31,6 +31,9 @@ function Maincontent(props) {
     setValue(newvalue);
   }
 
+  function editvalue(val) {
+    setEditValue(val);
+  }
 
  
   

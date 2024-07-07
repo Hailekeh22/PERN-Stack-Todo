@@ -5,11 +5,13 @@ function Input(props) {
 
   
   const [input, setinput] = useState("");
+  const [isEditing, setIsEditing] = useState(false);
 
 
 
   useEffect(() => {
     setinput(props.editValue);
+    setIsEditing(!!props.editValue);
   }, [props.editValue]);
 
 
@@ -19,12 +21,18 @@ function Input(props) {
 
   }
 
+  
 
 
-  function handleclick() {
-    props.addValue(input);
-    setinput("");
-    
+
+  function handleClick() {
+    if (isEditing) {
+      props.editValue(input);
+      setIsEditing(false);
+    } else {
+      props.addValue(input);
+    }
+    setinput('');
   }
 
 
@@ -38,7 +46,7 @@ function Input(props) {
       placeholder='Type here..'></textarea>
 
       <button 
-      onClick={handleclick} 
+        onClick={handleClick} 
       className='submitbtn'>Add</button>
 
     </div>
