@@ -8,22 +8,23 @@ const __dirname = path.dirname(__filename);
 const envpath = path.resolve(__dirname, "../.env");
 dotenv.config({ path: envpath });
 
-const db = new pg.Client({
+const config = {
   user: process.env.dbuser,
   host: process.env.dbhost,
   database: process.env.db,
   password: process.env.dbpwd,
   port: process.env.port,
-});
+};
 
-const accessdb = async () => {
-  db.connect((err) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log("Connection Sucess");
-    }
-  });
-  const result = await db.query("Select * from todos");
-  console.log(result.rows);
+export const accessdb = async () => {
+  const db = new pg.Client(config);
+  try {
+    await db.connect();
+    const result = await db.query("Select * from todos");
+    return result.rows;
+  } catch (e) {
+    console.log(e);
+  } finally {
+    await db.end();
+  }
 };
