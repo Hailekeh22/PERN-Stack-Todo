@@ -28,3 +28,19 @@ export const accessdb = async () => {
     await db.end();
   }
 };
+
+export const insertodo = async (value) => {
+  const db = new pg.Client(config);
+
+  try {
+    await db.connect();
+    const query = "INSERT INTO todos (userid,todoitems) VALUES ($1)";
+    const newTodo = [1, value];
+    await db.query(query, newTodo);
+    return "Sucessfuly added";
+  } catch (e) {
+    console.log(e);
+  } finally {
+    await db.end();
+  }
+};
