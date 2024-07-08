@@ -44,3 +44,19 @@ export const insertodo = async (value) => {
     await db.end();
   }
 };
+
+export const deletetodo = async (value) => {
+  const db = new pg.Client(config);
+
+  try {
+    await db.connect();
+    const query = "DELETE FROM todos WHERE id = $1";
+    const toremove = [value];
+    await db.query(query, toremove);
+    return "sucess";
+  } catch (e) {
+    console.log(e);
+  } finally {
+    await db.end();
+  }
+};

@@ -8,13 +8,18 @@ function Maincontent(props) {
   const [value, setValue] = useState([]);
   const [editValue, setEditValue] = useState("");
   const [newValue, SetnewValue] = useState("");
+  const [remove, setRemove] = useState("");
 
   useEffect(() => {
     axios
       .get("http://localhost:4545/lists")
       .then((response) => {
         const data = response.data;
-        const allTodos = data.flatMap((d) => d.todoitems);
+        const allTodos = data.flatMap((data) => ({
+          id: data.id,
+          todoitems: data.todoitems,
+        }));
+        console.log(allTodos);
         setValue(allTodos);
       })
       .catch((error) => {
@@ -31,7 +36,10 @@ function Maincontent(props) {
         .post("http://localhost:4545/addtodo", payload)
         .then((res) => {
           const data = res.data;
-          const allTodos = data.flatMap((data) => data.todoitems);
+          const allTodos = data.flatMap((data) => ({
+            id: data.id,
+            todoitems: data.todoitems,
+          }));
           setValue(allTodos);
           SetnewValue("");
         })
@@ -41,6 +49,23 @@ function Maincontent(props) {
     }
   }, [newValue]);
 
+  useEffect(() => {
+    if (remove) {
+      const payload = {
+        id: remove[0],
+      };
+      axios.post("http://localhost:4545/delete").then((res) => {
+        const data = res.data;
+        const allTodos = data.flatMap((data) => ({
+          id: data.id,
+          todoitems: data.todoitems,
+        }));
+        setValue(allTodos);
+        setRemove("");
+      });
+    }
+  }, [remove]);
+
   function editvalue(val) {
     setEditValue(val);
     console.log(editValue + " from main");
@@ -49,7 +74,6 @@ function Maincontent(props) {
   function addValue(input) {
     if (input !== "" && !value.includes(input)) {
       SetnewValue(input);
-      setValue(input);
     } else {
       alert("Invalid Submit!!");
     }
@@ -58,6 +82,7 @@ function Maincontent(props) {
   function deletelist(removedvalue) {
     let newvalue = value.filter((val) => val !== removedvalue);
     setValue(newvalue);
+    setRemove(removedvalue);
   }
 
   function editvalue(val) {
