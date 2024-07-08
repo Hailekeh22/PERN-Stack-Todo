@@ -34,7 +34,7 @@ export const insertodo = async (value) => {
 
   try {
     await db.connect();
-    const query = "INSERT INTO todos (userid,todoitems) VALUES ($1)";
+    const query = "INSERT INTO todos (userid,todoitems) VALUES ($1,$2)";
     const newTodo = [1, value];
     await db.query(query, newTodo);
     return "Sucessfuly added";

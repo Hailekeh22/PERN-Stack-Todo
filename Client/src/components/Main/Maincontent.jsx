@@ -23,15 +23,22 @@ function Maincontent(props) {
   }, []);
 
   useEffect(() => {
-    const payload = {
-      newtodo: newValue,
-    };
-    axios.post("http://localhost:4545/addtodo", payload).then((res) => {
-      const data = res.data;
-      const allTodos = data.flatMap((d) => d.todoitems);
-      setValue(allTodos);
-      SetnewValue("");
-    });
+    if (newValue) {
+      const payload = {
+        newtodo: newValue,
+      };
+      axios
+        .post("http://localhost:4545/addtodo", payload)
+        .then((res) => {
+          const data = res.data;
+          const allTodos = data.flatMap((data) => data.todoitems);
+          setValue(allTodos);
+          SetnewValue("");
+        })
+        .catch((error) => {
+          console.error("Error posting data:", error);
+        });
+    }
   }, [newValue]);
 
   function editvalue(val) {
@@ -41,8 +48,8 @@ function Maincontent(props) {
 
   function addValue(input) {
     if (input !== "" && !value.includes(input)) {
-      setValue((prev) => [...prev, input]);
       SetnewValue(input);
+      setValue(input);
     } else {
       alert("Invalid Submit!!");
     }
