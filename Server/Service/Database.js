@@ -50,7 +50,7 @@ export const deletetodo = async (value) => {
 
   try {
     await db.connect();
-    const query = "DELETE FROM todos WHERE id = $1";
+    const query = "DELETE FROM todos WHERE todoitems = $1";
     const toremove = [value];
     await db.query(query, toremove);
     return "sucess";

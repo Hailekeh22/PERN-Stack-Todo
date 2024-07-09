@@ -52,9 +52,9 @@ function Maincontent(props) {
   useEffect(() => {
     if (remove) {
       const payload = {
-        id: remove[0],
+        name: remove,
       };
-      axios.post("http://localhost:4545/delete").then((res) => {
+      axios.post("http://localhost:4545/delete", payload).then((res) => {
         const data = res.data;
         const allTodos = data.flatMap((data) => ({
           id: data.id,

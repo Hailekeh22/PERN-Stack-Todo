@@ -30,9 +30,8 @@ app.post("/addtodo", async (req, res) => {
 });
 
 app.post("/delete", async (req, res) => {
-  const id = req.body.id;
-
-  const deleteTodoItem = await deletetodo(id);
+  const name = req.body.name;
+  const deleteTodoItem = await deletetodo(name);
   if (deleteTodoItem) {
     const data = await accessdb();
     res.json(data);
