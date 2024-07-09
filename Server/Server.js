@@ -18,7 +18,6 @@ app.get("/lists", async (req, res) => {
 
 app.post("/addtodo", async (req, res) => {
   const todoValue = req.body.newtodo;
-  console.log(todoValue);
   const add = await insertodo(todoValue);
   if (add) {
     const data = await accessdb();

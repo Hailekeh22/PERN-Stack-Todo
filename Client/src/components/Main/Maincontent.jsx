@@ -85,14 +85,10 @@ function Maincontent(props) {
     setRemove(removedvalue);
   }
 
-  function editvalue(val) {
-    setEditValue(val);
-  }
-
   return (
     <div className="mainbody">
       <Input addValue={addValue} editValue={editValue} />
-      <Show value={value} editvalue={editvalue} onDelete={deletelist} />
+      <Show value={value} onDelete={deletelist} />
     </div>
   );
 }

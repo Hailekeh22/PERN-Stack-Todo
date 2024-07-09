@@ -8,12 +8,7 @@ function Show({ editvalue, onDelete, value }) {
       <div className="card-container">
         {value.map((item, index) => {
           return (
-            <Card
-              key={index}
-              editvalue={editvalue}
-              onDelete={onDelete}
-              value={item.todoitems}
-            />
+            <Card key={index} onDelete={onDelete} value={item.todoitems} />
           );
         })}
       </div>
